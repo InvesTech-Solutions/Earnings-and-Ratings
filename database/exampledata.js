@@ -1,4 +1,5 @@
 const faker = require('faker');
+const db = require('./db');
 
 // need to put in 
 // [name] -> rater
@@ -8,6 +9,11 @@ const faker = require('faker');
 var ratingState = ['Buy', 'Hold', 'Sell'];
 var quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
 var data = [];
+
+//  insert into rater
+for (var i = 0; i < 100; i++) {
+	var query = 'I'
+}
 
 
 for (var i = 0; i < 100; i++) {

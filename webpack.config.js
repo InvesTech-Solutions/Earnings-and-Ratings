@@ -5,6 +5,7 @@ var DIST_DIR = path.join(__dirname, '/client/dist');
 console.log(__dirname + '/client/src');
 
 module.exports = {
+  target: 'node',
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     filename: 'bundle.js',
