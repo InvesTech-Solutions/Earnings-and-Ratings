@@ -10,9 +10,9 @@ app.use(express.static(__dirname + '/../client/dist/'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/fakeData', (req, res) => {
-  console.log('dfdfdfffdff');
-  res.json();
+app.get('/fake', (req, res) => {
+  console.log('STUFF WORKS YO');
+  res.json('connected to the server');
 })
 
 app.listen(port, function() {

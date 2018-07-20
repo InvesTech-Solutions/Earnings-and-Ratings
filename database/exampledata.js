@@ -1,65 +1,64 @@
 const faker = require('faker');
-const db = require('./db');
+// const db = require('./db');
 
-
-// need to put in 
+// need to put in
 // [name] -> rater
 // [raterId, companyId, rating] -> rating
 // [name, estimated, actual, best_summary, sell_summary] -> company
 
-var ratingState = ['Buy', 'Hold', 'Sell'];
-var quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
-var data = [];
+let ratingState = ['Buy', 'Hold', 'Sell'];
+let quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
+let data = [];
 
 //  insert into rater
-for (var i = 0; i < 100; i++) {
-	var param = [];
-  param.push(`${faker.name.firstName()} ${faker.name.lastName()}`);
-	var query = 'INSERT INTO rater (name) VALUES (?)';
-	db.query(query, param, function(err, results) {
-		if(err) {
-			console.log('error')
-		} else {
-			console.log('success')
-		}
-	})
-}
+// for (var i = 0; i < 100; i++) {
+// 	var param = [];
+//   param.push(`${faker.name.firstName()} ${faker.name.lastName()}`);
+// 	var query = 'INSERT INTO rater (name) VALUES (?)';
+// 	db.query(query, param, function(err, results) {
+// 		if(err) {
+// 			console.log('error')
+// 		} else {
+// 			console.log('success')
+// 		}
+// 	})
+// }
 
 
-for (var i = 0; i < 100; i++) {
-	var raterArray = [];
-	var estimatedArray = [];
-	var actualArray = [];
-	var est = {};
-	var act = {};
+// for (var i = 0; i < 100; i++) {
+// 	var raterArray = [];
+// 	var estimatedArray = [];
+// 	var actualArray = [];
+// 	var est = {};
+// 	var act = {};
 
-	quarters.forEach(function(element, index) {
-		est.date = element;
-		act.date = element;
-		est.value = faker.commerce.price(100000000, 10000000000,  dec[2], symbol['']);
-		act.value = est.value * (0.15 * Math.random() + 1)
-		estimatedArray.push(est.slice());
-		actualArray.push(est.slice());
-	})
+// 	quarters.forEach(function(element, index) {
+// 		est.date = element;
+// 		act.date = element;
+// 		est.value = faker.commerce.price(100000000, 10000000000,  dec[2], symbol['']);
+// 		act.value = est.value * (0.15 * Math.random() + 1)
+// 		estimatedArray.push(est.slice());
+// 		actualArray.push(est.slice());
+// 	})
 
-	for (var i = 0; i < (50 + Math.floor(150 * Math.random())); i++) {
-		var rater = {};
-		rater.id = faker.random.number(1000000);
-		rater.ratingState = ratingState[Math.floor(2.99 * Math.random())];
-		raterArray.push(rater);
-	}
+// 	for (var i = 0; i < (50 + Math.floor(150 * Math.random())); i++) {
+// 		var rater = {};
+// 		rater.id = faker.random.number(1000000);
+// 		rater.ratingState = ratingState[Math.floor(2.99 * Math.random())];
+// 		raterArray.push(rater);
+// 	}
 
-	var oneData = {};
-	oneData.id = faker.random.number(1000000);
-	oneData.name = faker.company.companyName();
-	oneData.raters = raterArray.slice();
-	oneData.estimated = estimatedArray.slice();
-	oneData.actual = actualArray.slice();
-	oneData.bestSummary = faker.lorem.paragraph();
-	oneData.sellSummary = faker.lorem.paragraph();
+// 	var oneData = {};
+// 	oneData.id = faker.random.number(1000000);
+// 	oneData.name = faker.company.companyName();
+// 	oneData.raters = raterArray.slice();
+// 	oneData.estimated = estimatedArray.slice();
+// 	oneData.actual = actualArray.slice();
+// 	oneData.bestSummary = faker.lorem.paragraph();
+// 	oneData.sellSummary = faker.lorem.paragraph();
 
-	data.push(oneData);
-};
+// 	data.push(oneData);
+// };
 
 
 
