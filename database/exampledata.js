@@ -1,6 +1,7 @@
 const faker = require('faker');
 const db = require('./db');
 
+
 // need to put in 
 // [name] -> rater
 // [raterId, companyId, rating] -> rating
@@ -12,7 +13,16 @@ var data = [];
 
 //  insert into rater
 for (var i = 0; i < 100; i++) {
-	var query = 'I'
+	var param = [];
+  param.push(`${faker.name.firstName()} ${faker.name.lastName()}`);
+	var query = 'INSERT INTO rater (name) VALUES (?)';
+	db.query(query, param, function(err, results) {
+		if(err) {
+			console.log('error')
+		} else {
+			console.log('success')
+		}
+	})
 }
 
 
