@@ -1,5 +1,10 @@
 const faker = require('faker');
 
+// need to put in 
+// [name] -> rater
+// [raterId, companyId, rating] -> rating
+// [name, estimated, actual, best_summary, sell_summary] -> company
+
 var ratingState = ['Buy', 'Hold', 'Sell'];
 var quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
 var data = [];
@@ -30,7 +35,7 @@ for (var i = 0; i < 100; i++) {
 
 	var oneData = {};
 	oneData.id = faker.random.number(1000000);
-	oneData.mame = faker.name.jobTitle();
+	oneData.name = faker.company.companyName();
 	oneData.raters = raterArray.slice();
 	oneData.estimated = estimatedArray.slice();
 	oneData.actual = actualArray.slice();

@@ -31,3 +31,4 @@ CREATE TABLE company (
   sell_summary VARCHAR(10000) NOT NULL,
   PRIMARY KEY (id)
 );
+
