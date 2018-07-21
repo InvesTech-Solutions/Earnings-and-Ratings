@@ -10,19 +10,15 @@ let ratingState = ['Buy', 'Hold', 'Sell'];
 let quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
 let data = [];
 
-//  insert into rater
-// for (var i = 0; i < 100; i++) {
-// 	var param = [];
-//   param.push(`${faker.name.firstName()} ${faker.name.lastName()}`);
-// 	var query = 'INSERT INTO rater (name) VALUES (?)';
-// 	db.query(query, param, function(err, results) {
-// 		if(err) {
-// 			console.log('error')
-// 		} else {
-// 			console.log('success')
-// 		}
-// 	})
-// }
+CREATE TABLE company (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  estimated VARCHAR(255) NOT NULL,
+  actual VARCHAR(255) NOT NULL,
+  best_summary VARCHAR(10000) NOT NULL,
+  sell_summary VARCHAR(10000) NOT NULL,
+  PRIMARY KEY (id)
+);
 
 
 // for (var i = 0; i < 100; i++) {
