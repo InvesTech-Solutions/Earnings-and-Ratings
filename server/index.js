@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/fake', (req, res) => {
   let output;
+  let quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
   const callbackQuery = (err, results) => {
     if (err) {
       console.log ('error');
@@ -33,16 +34,47 @@ app.get('/fake', (req, res) => {
   // need company name, estimated price, actual price, best summary, worst summary
   for (let i = 0; i < 100; i ++) {
     let param = [];
+    let val;
+    let quartersEst = [];
+    let quartersAct = [];
     param.push(faker.company.companyName());
-    param.push(faker.commerce.price(100000000, 10000000000, 2, ''));
-    param.push(faker.commerce.price(param[param.length - 1] * 0.85, param[param.length - 1] * 1.15, 2, ''));
+
+    // estimated estimated array to be stored as [date, amount, ...] and turned JSON
+    quarters.forEach((element) => {   
+      if (val === undefined) {
+        val = faker.commerce.price(100000000, 10000000000, 2, '');
+      } else {
+        val = faker.commerce.price(val * 0.85, val * 1.15, 2, '');
+      }
+      quartersEst.push(element);
+      quartersEst.push(val);
+    });
+    param.push(JSON.stringify(quartersEst));
+
+    // likewise for actual array
+    quarters.forEach((element, index) => {
+      val = faker.commerce.price(Number(quartersEst[index * 2 + 1]) * 0.85, Number(quartersEst[index * 2 + 1]) * 1.15, 2, '');
+      quartersAct.push(element);
+      quartersAct.push(val);
+    });
+    param.push(JSON.stringify(quartersAct));
+
     param.push(faker.lorem.paragraph());
     param.push(faker.lorem.paragraph());
-    console.log(param)
+    console.log(param);
     let query = 'INSERT INTO company (name, estimated, actual, best_summary, sell_summary) VALUES (?, ?, ?, ?, ?)';
     db.query(query, param, callbackQuery);
   };
 
+  // populate rating table
+  // need raterId from rater, companyId from company, and rating
+  for (let i = 0; i < 1000; i ++) {
+    let param = [];
+    let ratingState = ['Buy', 'Hold', 'Sell'];
+    let companyList = [];
+
+
+  };
 
 
 

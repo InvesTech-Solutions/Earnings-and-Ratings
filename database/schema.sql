@@ -25,10 +25,10 @@ CREATE TABLE rating (
 CREATE TABLE company (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(255) NOT NULL,
-  estimated VARCHAR(255) NOT NULL,
-  actual VARCHAR(255) NOT NULL,
-  best_summary VARCHAR(10000) NOT NULL,
-  sell_summary VARCHAR(10000) NOT NULL,
+  estimated VARCHAR(1000) NOT NULL,
+  actual VARCHAR(1000) NOT NULL,
+  best_summary VARCHAR(5000) NOT NULL,
+  sell_summary VARCHAR(5000) NOT NULL,
   PRIMARY KEY (id)
 );
 
