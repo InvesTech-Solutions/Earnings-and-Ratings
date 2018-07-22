@@ -20,7 +20,6 @@ app.get('/fake', (req, res) => {
       console.log ('error');
     }
   };
-
   // populate rater table
   for (let i = 0; i < 100; i++) {
     let param = [];
@@ -28,7 +27,6 @@ app.get('/fake', (req, res) => {
     let query = 'INSERT INTO rater (name) VALUES (?)';
     db.query(query, param, callbackQuery);
   }
-
   // populate company table
   // need company name, estimated price, actual price, best summary, worst summary
   for (let i = 0; i < 100; i ++) {
@@ -37,7 +35,6 @@ app.get('/fake', (req, res) => {
     let quartersEst = [];
     let quartersAct = [];
     param.push(faker.company.companyName());
-
     // estimated estimated array to be stored as [date, amount, ...] and turned JSON
     quarters.forEach((element) => {   
       if (val === undefined) {
@@ -57,15 +54,12 @@ app.get('/fake', (req, res) => {
       quartersAct.push(val);
     });
     param.push(JSON.stringify(quartersAct));
-
     param.push(faker.lorem.paragraph());
     param.push(faker.lorem.paragraph());
     // console.log(param);
     let query = 'INSERT INTO company (name, estimated, actual, best_summary, sell_summary) VALUES (?, ?, ?, ?, ?)';
     db.query(query, param, callbackQuery);
   };
-
-
   // get list of all companies in the database
   // and upon acquring, create rating table within the callback
   let companyList;
@@ -78,7 +72,7 @@ app.get('/fake', (req, res) => {
   let selectedRaterIndex;
   const companyQuery = 'SELECT name from company';
   const raterQuery = 'SELECT name from rater';
-  
+
   // nested db.queries to get list of companies and raters, which will be used to create ratings table
   db.query(companyQuery, (err, data) => {
     if (err) {
@@ -113,18 +107,8 @@ app.get('/fake', (req, res) => {
           }
         };
       });
-      // populate rating table
-      // need raterId from rater, companyId from company, and rating
-
     };
-    
-    
-
   });
-
-
-
-
   res.json('');
 });
 
