@@ -61,19 +61,28 @@ app.get('/fake', (req, res) => {
 
     param.push(faker.lorem.paragraph());
     param.push(faker.lorem.paragraph());
-    console.log(param);
+    // console.log(param);
     let query = 'INSERT INTO company (name, estimated, actual, best_summary, sell_summary) VALUES (?, ?, ?, ?, ?)';
     db.query(query, param, callbackQuery);
   };
 
   // populate rating table
   // need raterId from rater, companyId from company, and rating
-  for (let i = 0; i < 1000; i ++) {
+  for (let i = 0; i < 1; i ++) {
     let param = [];
     let ratingState = ['Buy', 'Hold', 'Sell'];
-    let companyList = [];
-
-
+    let companyList;
+    let companyQuery = 'SELECT name from company';
+    db.query(companyQuery, (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        companyList = data.map((element) => {
+          return element.name;
+        });
+        
+      }
+    });
   };
 
 
