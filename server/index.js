@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/fake', (req, res) => {
   let output;
   let quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
+  let ratingState = ['Buy', 'Hold', 'Sell'];
   const callbackQuery = (err, results) => {
     if (err) {
       console.log ('error');
@@ -66,23 +67,41 @@ app.get('/fake', (req, res) => {
     db.query(query, param, callbackQuery);
   };
 
-  // populate rating table
-  // need raterId from rater, companyId from company, and rating
-  for (let i = 0; i < 1; i ++) {
-    let param = [];
-    let ratingState = ['Buy', 'Hold', 'Sell'];
-    let companyList;
-    let companyQuery = 'SELECT name from company';
-    db.query(companyQuery, (err, data) => {
-      if (err) {
-        console.log(err);
-      } else {
-        companyList = data.map((element) => {
-          return element.name;
-        });
-        
+
+  // get list of all companies in the database
+  // and upon acquring, create rating table within the callback
+  let companyList;
+  let companyLength;
+  let raterList;
+  let raterLength;
+  let selectedCompany;
+  let selectedCompIndex;
+  let selectedRater;
+  let selectedRaterIndex;
+
+  const companyQuery = 'SELECT name from company';
+  db.query(companyQuery, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      companyList = data.map((element) => {
+        return element.name;
+      });
+      companyLength = companyList.length - 1;
+      // populate rating table
+      // need raterId from rater, companyId from company, and rating
+      for (let i = 0; i < 1000; i ++) {
+        let param = [];
+        selectedCompIndex = Math.round(companyLength * Math.random());
+        selectedCompany = companyList[selectedCompIndex];
+
+
+      
       }
-    });
+  };
+    
+    
+
   };
 
 
