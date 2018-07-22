@@ -18,8 +18,6 @@ app.get('/fake', (req, res) => {
   const callbackQuery = (err, results) => {
     if (err) {
       console.log ('error');
-    } else {
-      console.log ('success');
     }
   };
 
@@ -78,8 +76,10 @@ app.get('/fake', (req, res) => {
   let selectedCompIndex;
   let selectedRater;
   let selectedRaterIndex;
-
   const companyQuery = 'SELECT name from company';
+  const raterQuery = 'SELECT name from rater';
+  
+  // nested db.queries to get list of companies and raters, which will be used to create ratings table
   db.query(companyQuery, (err, data) => {
     if (err) {
       console.log(err);
@@ -88,21 +88,39 @@ app.get('/fake', (req, res) => {
         return element.name;
       });
       companyLength = companyList.length - 1;
+
+      db.query(raterQuery, (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          raterList = data.map((element) => {
+            return element.name;
+          });
+          raterLength = raterList.length - 1;
+
+          // populate rating table
+          // need raterId from rater, companyId from company, and rating
+          for (let i = 0; i < 1000; i ++) {
+            let param = [];
+            let rating = ratingState[Math.floor(2.99 * Math.random())];
+            let query = 'INSERT INTO rating (raterId, companyId, rating) VALUE ((SELECT id FROM rater WHERE name = ? limit 1), (SELECT id FROM company WHERE name = ? limit 1), ?)';
+            selectedCompIndex = Math.round(companyLength * Math.random());
+            selectedCompany = companyList[selectedCompIndex];
+            selectedRaterIndex = Math.round(raterLength * Math.random());
+            selectedRater = raterList[selectedRaterIndex];
+            param = [selectedRater, selectedCompany, rating];
+            db.query(query, param, callbackQuery);
+          }
+        };
+      });
       // populate rating table
       // need raterId from rater, companyId from company, and rating
-      for (let i = 0; i < 1000; i ++) {
-        let param = [];
-        selectedCompIndex = Math.round(companyLength * Math.random());
-        selectedCompany = companyList[selectedCompIndex];
 
-
-      
-      }
-  };
+    };
     
     
 
-  };
+  });
 
 
 
