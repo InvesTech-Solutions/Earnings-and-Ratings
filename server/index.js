@@ -11,10 +11,11 @@ app.use(express.static(__dirname + '/../client/dist/'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/fake', (req, res) => {
+app.get('/createExample', (req, res) => {
+  // some constants
   let output;
-  let quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
-  let ratingState = ['Buy', 'Hold', 'Sell'];
+  const quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
+  const ratingState = ['Buy', 'Hold', 'Sell'];
   const callbackQuery = (err, results) => {
     if (err) {
       console.log ('error');
@@ -94,7 +95,7 @@ app.get('/fake', (req, res) => {
 
           // populate rating table
           // need raterId from rater, companyId from company, and rating
-          for (let i = 0; i < 1000; i ++) {
+          for (let i = 0; i < 3000; i ++) {
             let param = [];
             let rating = ratingState[Math.floor(2.99 * Math.random())];
             let query = 'INSERT INTO rating (raterId, companyId, rating) VALUE ((SELECT id FROM rater WHERE name = ? limit 1), (SELECT id FROM company WHERE name = ? limit 1), ?)';
@@ -109,7 +110,59 @@ app.get('/fake', (req, res) => {
       });
     };
   });
-  res.json('');
+  res.json('dfdf');
+});
+
+app.get('/getExample', (req, res) => {
+  // now organize data from database and send it back to the client;
+  // need to provide
+  // Id :  ….. , Name : ……. , Raters : [{ id: …. , rating state: ….. }, {....}, ..] , Estimated : [{ date : .… , value : …. }, {....}, ..] , Actual : [{date : …. , value : …. }, {....}, ..] , Best Summary : …. , Sell Summary : ….
+  let object = {};
+  let companyList;
+  let selected;
+  let index;
+
+  db.query('SELECT * from company', (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      index = Math.round(data.length * Math.random() - 1);
+      // companyList = data.map((element) => {
+      //   return element.name;
+      // });
+      // selectedCompany = companyList[Math.round(companyList.length * Math.random()) - 1];
+      selected = data[index];
+      object.id = selected.id;
+      object.name = selected.name;
+      object.esimated = selected.estimated;
+      object.actual = selected.actual;
+      object.bestsummary = selected.best_summary;
+      object.sellsummary = selected.sell_summary;
+
+      // now get raters array [rating state, rating state]
+      db.query('select rating from rating where companyId = ?', [object.id], (err, data) => {
+        if (err) {
+          console.log(err);
+        } else {
+          object.raters = data.map((element) => {
+            return element.rating;
+          });
+          res.json(object);
+        }
+      });
+    }
+  });
+
+  // for (let i = 0; i < companyList.length; i++) {
+  //   object = {};
+  //   object.name = companyList[i];
+  //   db.query('select id from company where name = ?', [object.name], (err, data) => {
+  //     if(err) { console.log(err) } else {
+  //       object.id = data;
+  //       response.push(object);
+  //     }
+  //   });
+  // };
 });
 
 app.listen(port, function() {

@@ -22,16 +22,26 @@ class App extends React.Component {
     // for now, send a request to get fake data from server
     let that = this;
     $.ajax({
-      url: '/fake',
+      url: '/createExample',
       type: 'GET',
       contentType: 'application/json',
-      success: function(data) {
-        console.log(data);
-        this.setState({ exampleDataLoaded: true });
+      success: (data) => {
+        // once example data created, do another AJAX to get the data
+        $.ajax({
+          url: '/getExample',
+          type: 'GET',
+          contentType: 'application/json',
+          success: (data) => {
+            console.log(data);
+          },
+          error: (error) => {
+            console.log(error);
+          }
+        })
 
       },
-      error: function(error) {
-        console.log('failed to connect to the server');
+      error: (error) => {
+        console.log(error);
       }
     });
   }
