@@ -116,7 +116,6 @@ app.get('/createExample', (req, res) => {
 app.get('/getExample', (req, res) => {
   // now organize data from database and send it back to the client;
   // need to provide
-  // Id :  ….. , Name : ……. , Raters : [{ id: …. , rating state: ….. }, {....}, ..] , Estimated : [{ date : .… , value : …. }, {....}, ..] , Actual : [{date : …. , value : …. }, {....}, ..] , Best Summary : …. , Sell Summary : ….
   let object = {};
   let companyList;
   let selected;
@@ -127,10 +126,6 @@ app.get('/getExample', (req, res) => {
       console.log(err);
     } else {
       index = Math.round(data.length * Math.random() - 1);
-      // companyList = data.map((element) => {
-      //   return element.name;
-      // });
-      // selectedCompany = companyList[Math.round(companyList.length * Math.random()) - 1];
       selected = data[index];
       object.id = selected.id;
       object.name = selected.name;
@@ -152,17 +147,6 @@ app.get('/getExample', (req, res) => {
       });
     }
   });
-
-  // for (let i = 0; i < companyList.length; i++) {
-  //   object = {};
-  //   object.name = companyList[i];
-  //   db.query('select id from company where name = ?', [object.name], (err, data) => {
-  //     if(err) { console.log(err) } else {
-  //       object.id = data;
-  //       response.push(object);
-  //     }
-  //   });
-  // };
 });
 
 app.listen(port, function() {
