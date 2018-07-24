@@ -7,7 +7,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      exampleDataLoaded: false
+      exampleDataLoaded: false,
+      exampleData: {}
     }
 
   }
@@ -32,7 +33,8 @@ class App extends React.Component {
           type: 'GET',
           contentType: 'application/json',
           success: (data) => {
-            console.log(data);
+            that.setState({ exampleDataLoaded : true, exampleData : Data });
+
           },
           error: (error) => {
             console.log(error);

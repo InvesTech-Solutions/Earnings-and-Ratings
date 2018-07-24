@@ -1,5 +1,5 @@
 {
-  "presets":  [["es2015", { "modules": false }], "react"],
+  "presets":  [["es2015", { "modules": false }], "react", "env"],
   "env": {
   "test": {
       "presets":[
@@ -7,8 +7,8 @@
          "stage-0",
         "react"],
       "plugins": [
-        "transform-es2015-modules-commonjs",
-        "dynamic-import-node"
+        "transform-class-properties",
+        "transform-object-rest-spread"
       ]
     }
   }
