@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import $ from 'jquery';
-// console.log(data);
+
 class App extends React.Component {
   constructor(props) {
     super(props);
