@@ -33,7 +33,7 @@ class App extends React.Component {
           type: 'GET',
           contentType: 'application/json',
           success: (data) => {
-            that.setState({ exampleDataLoaded : true, exampleData : Data });
+            that.setState({ exampleDataLoaded : true, exampleData : data });
 
           },
           error: (error) => {
