@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Earnings from './earnings.jsx';
 
 import $ from 'jquery';
 
@@ -8,14 +9,23 @@ class App extends React.Component {
     super(props);
     this.state = { 
       exampleDataLoaded: false,
-      exampleData: {}
+      companyId: null,
+      companyName: '',
+      companyEstimatedEarnings: [],
+      companyActualEarnings: [],
+      buySummary: '',
+      sellSummary: '',
+      ratings: []
     }
 
   }
 
   render () {
     return (<div>
-      <p>yo</p>
+     <Earnings 
+      estimatedEarnings={this.state.companyEstimatedEarnings}
+      actualEarnings={this.state.companyActualEarnings}
+    />
     </div>)
   }
 
@@ -33,8 +43,17 @@ class App extends React.Component {
           type: 'GET',
           contentType: 'application/json',
           success: (data) => {
-            that.setState({ exampleDataLoaded : true, exampleData : data });
-
+            console.log(data)
+            that.setState({ 
+              exampleDataLoaded : true, 
+              companyId: data.id,
+              companyName: data.name,
+              companyEstimatedEarnings: data.esimated,
+              companyActualEarnings: data.actual,
+              buySummary: data.bestsummary,
+              sellSummary: data.sellsummary,
+              ratings: data.raters
+            });
           },
           error: (error) => {
             console.log(error);
