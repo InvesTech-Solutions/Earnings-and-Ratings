@@ -10,7 +10,7 @@ class XAxis extends Component {
   }
 
   componentDidUpdate () {
-    console.log(this.props.dates);
+    
   }
 
   render () {
