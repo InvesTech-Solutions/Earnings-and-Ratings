@@ -1,5 +1,5 @@
 import React from 'react';
-import Earnings from './earningsComp/earnings.jsx';
+import Earnings from './earningsComp/earnings';
 import $ from 'jquery';
 
 class App extends React.Component {
@@ -48,8 +48,8 @@ class App extends React.Component {
         })
 
       },
-      error: (error) => {
-        console.log('Failed to access the server : ', error);
+      error: () => {
+
       }
     });
   }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import XAxis from './xAxis.jsx';
-import YAxis from './yAxis.jsx';
-import DataPoints from './dataPoints.jsx'
-import Description from './description.jsx'
+import XAxis from './xAxis';
+import YAxis from './yAxis';
+import DataPoints from './dataPoints'
+import Description from './description'
 
 class Earnings extends Component {
   constructor(props) {

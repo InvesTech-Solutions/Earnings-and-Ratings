@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import DataPoint from './dataPoint.jsx'
+import DataPoint from './dataPoint'
 
 class DataPoints extends Component {
   constructor(props) {

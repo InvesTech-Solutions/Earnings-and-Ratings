@@ -2,7 +2,6 @@ var path = require('path');
 var SRC_DIR = path.join(__dirname, '/client/src/components');
 var DIST_DIR = path.join(__dirname, '/client/dist');
 
-console.log(__dirname + '/client/src');
 
 module.exports = {
   target: 'node',
@@ -14,7 +13,8 @@ module.exports = {
   module : {
     rules : [
       {
-        test : /\.jsx?/,
+        test : /\.js|.jsx$/,
+        exclude: /node_modules/,
         include : SRC_DIR,
         loader: 'babel-loader',
 
@@ -23,5 +23,8 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
   }
 };

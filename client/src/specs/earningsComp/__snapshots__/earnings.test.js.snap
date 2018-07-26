@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component: Earnings should render initial layout 1`] = `
+Array [
+  <section
+    id="earningsComponent"
+  >
+    <header
+      className="earningsHead"
+    >
+      Earnings
+    </header>
+    <div
+      className="chartDiv"
+    >
+      <div
+        className="chartContainer"
+      >
+        <div
+          className="innerChartContainer"
+        >
+          <div
+            className="axes"
+          >
+            <YAxis
+              yRange={Array []}
+            />
+            <DataPoints
+              actual={undefined}
+              estimate={undefined}
+              yRange={Array []}
+            />
+            <XAxis
+              dates={Array []}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <Description
+      actual={undefined}
+      estimate={undefined}
+    />
+  </section>,
+]
+`;

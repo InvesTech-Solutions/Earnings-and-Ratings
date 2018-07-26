@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import YAxisTick from './yAxisTick.jsx';
+import YAxisTick from './yAxisTick';
 
 class YAxis extends Component {
   constructor(props) {
