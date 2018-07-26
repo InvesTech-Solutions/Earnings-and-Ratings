@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import XAxis from './xAxis.jsx';
 import YAxis from './yAxis.jsx';
 import DataPoints from './dataPoints.jsx'
+import Description from './description.jsx'
 
 class Earnings extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Earnings extends Component {
   }
 
   componentDidUpdate () {
-    console.log('dfdfdf')
+    console.log(this.props)
   }
 
   render () {
@@ -32,9 +33,10 @@ class Earnings extends Component {
             </div>
           </div>
         </div>
-
-        <div classame="descDiv">
-        </div>
+        <Description 
+          estimate={this.props.estimatedEarnings}
+          actual={this.props.actualEarnings}
+        /> 
       </section>
     ) 
   }

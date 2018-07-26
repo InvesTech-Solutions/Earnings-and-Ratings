@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class YAxis extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +9,7 @@ class YAxis extends Component {
   }
 
   componentDidUpdate () {
-    console.log('y connected')
+
   }
 
   render () {
@@ -29,10 +28,8 @@ class YAxis extends Component {
           <div className="y4">$4.00</div>
         </span>
       </div>
-    ) 
+    )
   }
-
-  
 }
 
 export default YAxis;

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class XAxis extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +9,7 @@ class XAxis extends Component {
   }
 
   componentDidUpdate () {
-    console.log('x connected')
+
   }
 
   render () {
@@ -22,10 +21,8 @@ class XAxis extends Component {
           </div>
         </span>
       </div>
-    ) 
+    )
   }
-
-  
 }
 
 export default XAxis;

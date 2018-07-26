@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class DataPoints extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +9,7 @@ class DataPoints extends Component {
   }
 
   componentDidUpdate () {
-    console.log('data connected')
+
   }
 
   render () {
@@ -18,14 +17,12 @@ class DataPoints extends Component {
       <svg className="xs" width="560" height="120">
         <g>
           <g transform="translate(0, 58.536585)">
-            <circle r="7" className="circle" />
+            <circle r="7" className="dataPoint" />
           </g>
         </g>
       </svg>
-    ) 
+    )
   }
-
-  
 }
 
 export default DataPoints;

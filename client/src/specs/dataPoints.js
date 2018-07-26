@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -31,23 +31,21 @@ var DataPoints = function (_Component) {
   }
 
   _createClass(DataPoints, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      console.log('data connected');
-    }
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {}
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'svg',
-        { className: 'xs', width: '560', height: '120' },
+        "svg",
+        { className: "xs", width: "560", height: "120" },
         _react2.default.createElement(
-          'g',
+          "g",
           null,
           _react2.default.createElement(
-            'g',
-            { transform: 'translate(0, 58.536585)' },
-            _react2.default.createElement('circle', { r: '7', className: 'circle' })
+            "g",
+            { transform: "translate(0, 58.536585)" },
+            _react2.default.createElement("circle", { r: "7", className: "dataPoint" })
           )
         )
       );
@@ -58,4 +56,4 @@ var DataPoints = function (_Component) {
 }(_react.Component);
 
 exports.default = DataPoints;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2NvbXBvbmVudHMvZGF0YVBvaW50cy5qc3giXSwibmFtZXMiOlsiRGF0YVBvaW50cyIsInByb3BzIiwic3RhdGUiLCJjb25zb2xlIiwibG9nIiwiQ29tcG9uZW50Il0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7SUFHTUEsVTs7O0FBQ0osc0JBQVlDLEtBQVosRUFBbUI7QUFBQTs7QUFBQSx3SEFDWEEsS0FEVzs7QUFFakIsVUFBS0MsS0FBTCxHQUFhLEVBQWI7QUFGaUI7QUFLbEI7Ozs7eUNBRXFCO0FBQ3BCQyxjQUFRQyxHQUFSLENBQVksZ0JBQVo7QUFDRDs7OzZCQUVTO0FBQ1IsYUFDRTtBQUFBO0FBQUEsVUFBSyxXQUFVLElBQWYsRUFBb0IsT0FBTSxLQUExQixFQUFnQyxRQUFPLEtBQXZDO0FBQ0U7QUFBQTtBQUFBO0FBQ0U7QUFBQTtBQUFBLGNBQUcsV0FBVSx5QkFBYjtBQUNFLHNEQUFRLEdBQUUsR0FBVixFQUFjLFdBQVUsUUFBeEI7QUFERjtBQURGO0FBREYsT0FERjtBQVNEOzs7O0VBdEJzQkMsZ0I7O2tCQTJCVkwsVSIsImZpbGUiOiJkYXRhUG9pbnRzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gJ3JlYWN0JztcblxuXG5jbGFzcyBEYXRhUG9pbnRzIGV4dGVuZHMgQ29tcG9uZW50IHtcbiAgY29uc3RydWN0b3IocHJvcHMpIHtcbiAgICBzdXBlcihwcm9wcyk7XG4gICAgdGhpcy5zdGF0ZSA9IHtcblxuICAgIH1cbiAgfVxuXG4gIGNvbXBvbmVudERpZFVwZGF0ZSAoKSB7XG4gICAgY29uc29sZS5sb2coJ2RhdGEgY29ubmVjdGVkJylcbiAgfVxuXG4gIHJlbmRlciAoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxzdmcgY2xhc3NOYW1lPVwieHNcIiB3aWR0aD1cIjU2MFwiIGhlaWdodD1cIjEyMFwiPlxuICAgICAgICA8Zz5cbiAgICAgICAgICA8ZyB0cmFuc2Zvcm09XCJ0cmFuc2xhdGUoMCwgNTguNTM2NTg1KVwiPlxuICAgICAgICAgICAgPGNpcmNsZSByPVwiN1wiIGNsYXNzTmFtZT1cImNpcmNsZVwiIC8+XG4gICAgICAgICAgPC9nPlxuICAgICAgICA8L2c+XG4gICAgICA8L3N2Zz5cbiAgICApIFxuICB9XG5cbiAgXG59XG5cbmV4cG9ydCBkZWZhdWx0IERhdGFQb2ludHM7Il19
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2NvbXBvbmVudHMvZGF0YVBvaW50cy5qc3giXSwibmFtZXMiOlsiRGF0YVBvaW50cyIsInByb3BzIiwic3RhdGUiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7Ozs7Ozs7Ozs7OztJQUVNQSxVOzs7QUFDSixzQkFBWUMsS0FBWixFQUFtQjtBQUFBOztBQUFBLHdIQUNYQSxLQURXOztBQUVqQixVQUFLQyxLQUFMLEdBQWEsRUFBYjtBQUZpQjtBQUtsQjs7Ozt5Q0FFcUIsQ0FFckI7Ozs2QkFFUztBQUNSLGFBQ0U7QUFBQTtBQUFBLFVBQUssV0FBVSxJQUFmLEVBQW9CLE9BQU0sS0FBMUIsRUFBZ0MsUUFBTyxLQUF2QztBQUNFO0FBQUE7QUFBQTtBQUNFO0FBQUE7QUFBQSxjQUFHLFdBQVUseUJBQWI7QUFDRSxzREFBUSxHQUFFLEdBQVYsRUFBYyxXQUFVLFdBQXhCO0FBREY7QUFERjtBQURGLE9BREY7QUFTRDs7OztFQXRCc0JDLGdCOztrQkF5QlZILFUiLCJmaWxlIjoiZGF0YVBvaW50cy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBDb21wb25lbnQgfSBmcm9tICdyZWFjdCc7XG5cbmNsYXNzIERhdGFQb2ludHMgZXh0ZW5kcyBDb21wb25lbnQge1xuICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKTtcbiAgICB0aGlzLnN0YXRlID0ge1xuXG4gICAgfVxuICB9XG5cbiAgY29tcG9uZW50RGlkVXBkYXRlICgpIHtcblxuICB9XG5cbiAgcmVuZGVyICgpIHtcbiAgICByZXR1cm4gKFxuICAgICAgPHN2ZyBjbGFzc05hbWU9XCJ4c1wiIHdpZHRoPVwiNTYwXCIgaGVpZ2h0PVwiMTIwXCI+XG4gICAgICAgIDxnPlxuICAgICAgICAgIDxnIHRyYW5zZm9ybT1cInRyYW5zbGF0ZSgwLCA1OC41MzY1ODUpXCI+XG4gICAgICAgICAgICA8Y2lyY2xlIHI9XCI3XCIgY2xhc3NOYW1lPVwiZGF0YVBvaW50XCIgLz5cbiAgICAgICAgICA8L2c+XG4gICAgICAgIDwvZz5cbiAgICAgIDwvc3ZnPlxuICAgIClcbiAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBEYXRhUG9pbnRzOyJdfQ==

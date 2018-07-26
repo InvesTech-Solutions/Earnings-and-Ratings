@@ -46,10 +46,10 @@ class App extends React.Component {
             console.log(data)
             that.setState({ 
               exampleDataLoaded : true, 
-              companyId: data.id,
+              companyId: JSON.parse(data.id),
               companyName: data.name,
-              companyEstimatedEarnings: data.esimated,
-              companyActualEarnings: data.actual,
+              companyEstimatedEarnings: JSON.parse(data.esimated),
+              companyActualEarnings: JSON.parse(data.actual),
               buySummary: data.bestsummary,
               sellSummary: data.sellsummary,
               ratings: data.raters
