@@ -8,12 +8,39 @@ class Earnings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      yRange : [],
+      control : false
     }
   }
 
   componentDidUpdate () {
     console.log(this.props)
+    let filtered = this.props.estimatedEarnings.concat(this.props.actualEarnings).filter((element) => {
+      return element[0] === '$';
+    });
+    let inNumbers = filtered.map((element) => {
+      return Number(element.substring(1));
+    });
+
+    let min = Math.min(...inNumbers);
+    let max = Math.max(...inNumbers);
+    let interval = (max - min) / 3;
+    let yArray = [String(min), String(min + interval), String(min + 2 * interval), String(max)];
+    yArray = yArray.map((element) => {
+      if(element[element.length - 3] === '.') {
+        return '$' + element;
+      } 
+      if (element[element.length - 2] === '.') {
+        return '$' + element + '0';
+      };
+      if (element.indexOf('.') !== -1) {
+        return '$' + element.substring(0, element.indexOf('.') + 3);
+      }
+      return '$' + element + '.00'
+    });
+    if(this.state.control === false) {
+      this.setState({yRange : yArray, control : true});
+    }
   }
 
   render () {
@@ -26,9 +53,17 @@ class Earnings extends Component {
           <div className="chartContainer">
             <div className="innerChartContainer">
               <div className="axes">
-                <YAxis />
-                <DataPoints />
-                <XAxis />
+                <YAxis 
+                  yRange={this.state.yRange}
+                />
+                <DataPoints 
+                  estimate={this.props.estimatedEarnings}
+                  actual={this.props.actualEarnings}
+                />
+                <XAxis 
+                  estimate={this.props.estimatedEarnings}
+                  actual={this.props.actualEarnings}
+                />
               </div>
             </div>
           </div>

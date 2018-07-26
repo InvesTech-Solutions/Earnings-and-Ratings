@@ -9,7 +9,7 @@ class Description extends Component {
   }
 
   componentDidUpdate () {
-    console.log(this.props.estimate)
+    
   }
 
   render () {

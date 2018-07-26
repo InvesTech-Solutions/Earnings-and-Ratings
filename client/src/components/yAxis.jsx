@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YAxisTick from './yAxisTick.jsx';
 
 class YAxis extends Component {
   constructor(props) {
@@ -15,20 +16,16 @@ class YAxis extends Component {
   render () {
     return (
       <div className="ylabel">
-        <span className="y-1">
-          <div className="y1">$1.00</div>
-        </span>
-        <span className="y-2">
-          <div className="y2">$2.00</div>
-        </span>
-        <span className="y-3">
-          <div className="y3">$3.00</div>
-        </span>
-        <span className="y-4">
-          <div className="y4">$4.00</div>
-        </span>
+        {this.props.yRange.map((yTick, index)=>{
+          return (
+            <YAxisTick 
+              yValue={yTick}
+              ind={index + 1}
+            />
+          );
+        })}
       </div>
-    )
+    );
   }
 }
 
