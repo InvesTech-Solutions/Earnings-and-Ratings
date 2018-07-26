@@ -62,6 +62,7 @@ class Earnings extends Component {
                 <DataPoints 
                   estimate={this.props.estimatedEarnings}
                   actual={this.props.actualEarnings}
+                  yRange={this.state.yRange}
                 />
                 <XAxis 
                   dates={this.state.xDates}

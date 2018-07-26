@@ -1,27 +1,41 @@
 import React, { Component } from 'react';
+import DataPoint from './dataPoint.jsx'
 
 class DataPoints extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      estimate : [],
+      actual : [],
+      trigger : false
     }
   }
 
   componentDidUpdate () {
-
+    if (this.state.trigger === false) {
+      this.setState({
+        estimate : this.props.estimate.filter((element) => {return element[0] === '$';}),
+        actual : this.props.actual.filter((element) => {return element[0] === '$';}), 
+        trigger : true
+      });
+    }
   }
 
   render () {
     return (
       <svg className="xs" width="560" height="120">
-        <g>
-          <g transform="translate(0, 58.536585)">
-            <circle r="7" className="dataPoint" />
-          </g>
-        </g>
+        {this.state.estimate.map((data, index) => {
+          return (
+            <DataPoint
+              estimatePoint={Number(data.substring(1))}
+              actualPoint={Number(this.state.actual[index].substring(1))}
+              yRange={this.props.yRange}
+              ind={index + 1}
+            />
+          );
+        })}
       </svg>
-    )
+    );
   }
 }
 
