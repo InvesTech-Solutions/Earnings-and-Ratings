@@ -4,13 +4,6 @@ import YAxisTick from './yAxisTick.jsx';
 class YAxis extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
-  }
-
-  componentDidUpdate () {
-
   }
 
   render () {

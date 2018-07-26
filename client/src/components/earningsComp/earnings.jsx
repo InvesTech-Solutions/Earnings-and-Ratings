@@ -15,6 +15,7 @@ class Earnings extends Component {
   }
 
   componentDidUpdate () {
+    // process data to create arrays used for y-axis (min to max, length of 4) and x-axis (quarterlies)
     let filtered = this.props.estimatedEarnings.concat(this.props.actualEarnings).filter((element) => {
       return element[0] === '$';
     });
@@ -24,7 +25,6 @@ class Earnings extends Component {
     let inNumbers = filtered.map((element) => {
       return Number(element.substring(1));
     });
-
     let min = Math.min(...inNumbers);
     let max = Math.max(...inNumbers);
     let interval = (max - min) / 3;
@@ -41,11 +41,13 @@ class Earnings extends Component {
       }
       return '$' + element + '.00'
     });
+    // set a controller to prevent infinite looping of setState
     if(this.state.control === false) {
       this.setState({yRange : yArray, xDates : dates, control : true});
     }
   }
 
+  // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
       <section id="earningsComponent">

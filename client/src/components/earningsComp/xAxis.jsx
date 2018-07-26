@@ -4,15 +4,8 @@ import XAxisTick from './xAxisTick.jsx';
 class XAxis extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
   }
-
-  componentDidUpdate () {
-    
-  }
-
+  
   render () {
     return (
       <div className="xlabel">

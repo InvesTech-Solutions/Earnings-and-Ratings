@@ -3,15 +3,8 @@ import React, { Component } from 'react';
 class XAxisTick extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
   }
-
-  componentDidMount () {
-
-  }
-
+  
   render () {
     return (
       <span className={"x-" + this.props.ind}>
