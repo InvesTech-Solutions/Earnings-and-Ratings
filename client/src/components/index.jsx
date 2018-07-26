@@ -43,7 +43,6 @@ class App extends React.Component {
           type: 'GET',
           contentType: 'application/json',
           success: (data) => {
-            console.log(data)
             that.setState({ 
               exampleDataLoaded : true, 
               companyId: JSON.parse(data.id),

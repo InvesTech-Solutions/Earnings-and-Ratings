@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import XAxisTick from './xAxisTick.jsx';
 
 class XAxis extends Component {
   constructor(props) {
@@ -9,17 +10,20 @@ class XAxis extends Component {
   }
 
   componentDidUpdate () {
-
+    console.log(this.props.dates);
   }
 
   render () {
     return (
       <div className="xlabel">
-        <span className="x-1">
-          <div className="x1">
-            Q4 2016
-          </div>
-        </span>
+        {this.props.dates.map((date, index) => {
+          return (
+            <XAxisTick 
+              xValue={date}
+              ind={index + 1}
+            />
+          );
+        })}
       </div>
     )
   }

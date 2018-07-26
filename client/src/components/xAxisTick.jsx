@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class YAxisTick extends Component {
+class XAxisTick extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,11 +14,13 @@ class YAxisTick extends Component {
 
   render () {
     return (
-      <span className={"y-" + this.props.ind}>
-        <div className={"y" + this.props.ind}>{this.props.yValue}</div>
+      <span className={"x-" + this.props.ind}>
+        <div className={"x" + this.props.ind}>
+          {this.props.xValue}
+        </div>
       </span>
     );
   }
 }
 
-export default YAxisTick;
+export default XAxisTick;

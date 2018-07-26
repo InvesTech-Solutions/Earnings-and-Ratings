@@ -9,14 +9,17 @@ class Earnings extends Component {
     super(props);
     this.state = {
       yRange : [],
+      xDates : [],
       control : false
     }
   }
 
   componentDidUpdate () {
-    console.log(this.props)
     let filtered = this.props.estimatedEarnings.concat(this.props.actualEarnings).filter((element) => {
       return element[0] === '$';
+    });
+    let dates = this.props.estimatedEarnings.filter((element) => {
+      return element[0] !== '$';
     });
     let inNumbers = filtered.map((element) => {
       return Number(element.substring(1));
@@ -39,7 +42,7 @@ class Earnings extends Component {
       return '$' + element + '.00'
     });
     if(this.state.control === false) {
-      this.setState({yRange : yArray, control : true});
+      this.setState({yRange : yArray, xDates : dates, control : true});
     }
   }
 
@@ -61,8 +64,7 @@ class Earnings extends Component {
                   actual={this.props.actualEarnings}
                 />
                 <XAxis 
-                  estimate={this.props.estimatedEarnings}
-                  actual={this.props.actualEarnings}
+                  dates={this.state.xDates}
                 />
               </div>
             </div>
