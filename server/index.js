@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/createExample', (req, res) => {
   // some constants
   let output;
-  const quarters = ['Q42016', 'Q12017', 'Q22017', 'Q32017', 'Q42017', 'Q12018', 'Q22018'];
+  const quarters = ['Q4 2016', 'Q1 2017', 'Q2 2017', 'Q3 2017', 'Q4 2017', 'Q1 2018', 'Q2 2018'];
   const ratingState = ['Buy', 'Hold', 'Sell'];
   const callbackQuery = (err, results) => {
     if (err) {
@@ -39,9 +39,9 @@ app.get('/createExample', (req, res) => {
     // estimated estimated array to be stored as [date, amount, ...] and turned JSON
     quarters.forEach((element) => {   
       if (val === undefined) {
-        val = faker.commerce.price(100000000, 10000000000, 2, '');
+        val = faker.finance.amount(.70, 2.00, 2, '$');
       } else {
-        val = faker.commerce.price(val * 0.85, val * 1.15, 2, '');
+        val = faker.finance.amount(Number(val.substring(1)) * 0.85, Number(val.substring(1)) * 1.15, 2, '$');
       }
       quartersEst.push(element);
       quartersEst.push(val);
@@ -50,7 +50,7 @@ app.get('/createExample', (req, res) => {
 
     // likewise for actual array
     quarters.forEach((element, index) => {
-      val = faker.commerce.price(Number(quartersEst[index * 2 + 1]) * 0.85, Number(quartersEst[index * 2 + 1]) * 1.15, 2, '');
+      val = faker.finance.amount(Number(quartersEst[index * 2 + 1].substring(1)) * 0.85, Number(quartersEst[index * 2 + 1].substring(1)) * 1.15, 2, '$');
       quartersAct.push(element);
       quartersAct.push(val);
     });
