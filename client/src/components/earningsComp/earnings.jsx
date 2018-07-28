@@ -51,7 +51,7 @@ class Earnings extends Component {
   render () {
     return (
       <section id="earningsComponent">
-        <header className="earningsHead">
+        <header className="head">
         Earnings
         </header>
         <div className="chartDiv">

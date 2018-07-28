@@ -1,6 +1,7 @@
 import React from 'react';
-import Earnings from './earningsComp/earnings';
 import $ from 'jquery';
+import Earnings from './earningsComp/earnings';
+import Summary from './summaryComp/summary'
 
 class App extends React.Component {
   constructor(props) {
@@ -57,6 +58,9 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <Summary 
+
+        />
         <Earnings 
           estimatedEarnings={this.state.companyEstimatedEarnings}
           actualEarnings={this.state.companyActualEarnings}
