@@ -63,7 +63,9 @@ class App extends React.Component {
           buySummary={this.state.buySummary}
           sellSummary={this.state.sellSummary}
         />
+        <br />
         <Earnings 
+          className="earningsBlock"
           estimatedEarnings={this.state.companyEstimatedEarnings}
           actualEarnings={this.state.companyActualEarnings}
         />

@@ -21,16 +21,16 @@ class PercentBar extends Component {
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
-      <div>
-        <div>
+      <div className='barRow'>
+        <div className='barSuggestion'>
           {this.props.suggestion}
         </div>
-        <div>
-          <div>
-            <span>{this.state.rounded}</span>
+        <div className='barContain'>
+          <div className='percInBarContain' style={{left: this.state.percent}}>
+            <span className='percInBar'>{this.state.rounded}</span>
           </div>
-          <div>
-            <div></div>
+          <div className='wholeBar'>
+            <div className='coloredBar' style={{width: this.state.percent}}></div>
           </div>
         </div>
       </div>

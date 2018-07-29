@@ -43,7 +43,7 @@ class PercentBars extends Component {
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
-      <div>
+      <div className='bars'>
         {this.state.suggestions.map((suggestion, index) => {
           return (
             <PercentBar
