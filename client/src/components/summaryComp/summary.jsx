@@ -41,10 +41,15 @@ class Summary extends Component {
           percent={this.state.buyPerc}
           total={this.state.totalRaters}
         />
-        <PercentBars
-        />
-        <SummaryBoxes
-        />
+        <div>
+          <PercentBars
+            ratings={this.props.ratings}
+          />
+          <SummaryBoxes
+            buy={this.props.buySummary}
+            sell={this.props.sellSummary}
+          />
+        </div>
       </section>
     )
   }

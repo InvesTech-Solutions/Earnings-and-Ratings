@@ -7,11 +7,7 @@ class DataPoint extends Component {
 
     }
   }
-
-  componentDidMount () {
-    console.log(this.props.yRange[0]);
-  }
-
+  
   render () {
     return (
       <g>

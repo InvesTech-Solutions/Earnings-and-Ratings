@@ -12,14 +12,11 @@ class Tag extends Component {
 
   componentDidMount () {
     this.setState({ trigger: false })
-    console.log('mounted')
   }
 
   componentDidUpdate () {
-    console.log('updated')
     let total = this.props.total;
     let percent = this.props.percent;
-    console.log(total, percent)
     if (this.state.trigger === false && total !== null && percent !== null) {
       this.setState({ percent : percent + '%', total : `of ${total} ratings`, trigger: true });
     }

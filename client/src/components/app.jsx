@@ -32,7 +32,6 @@ class App extends React.Component {
           type: 'GET',
           contentType: 'application/json',
           success: (data) => {
-            console.log(data);
             that.setState({ 
               exampleDataLoaded : true, 
               companyId: JSON.parse(data.id),
@@ -61,6 +60,8 @@ class App extends React.Component {
       <div>
         <Summary 
           ratings={this.state.ratings}
+          buySummary={this.state.buySummary}
+          sellSummary={this.state.sellSummary}
         />
         <Earnings 
           estimatedEarnings={this.state.companyEstimatedEarnings}
