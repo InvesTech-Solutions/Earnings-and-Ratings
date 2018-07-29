@@ -14,7 +14,6 @@ class Summary extends Component {
   }
 
   componentDidUpdate () {
-    console.log(this.props.ratings);
     let buyCount = 0;
     this.props.ratings.forEach((element) => {
       if (element === 'Buy') {
