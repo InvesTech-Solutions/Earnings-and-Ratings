@@ -59,7 +59,7 @@ class App extends React.Component {
     return (
       <div>
         <Summary 
-
+          ratings={this.state.ratings}
         />
         <Earnings 
           estimatedEarnings={this.state.companyEstimatedEarnings}

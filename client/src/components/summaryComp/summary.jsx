@@ -7,26 +7,44 @@ class Summary extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      buyPerc : null,
+      totalRaters : null,
+      trigger : false
     }
   }
 
   componentDidUpdate () {
-
+    console.log(this.props.ratings);
+    let buyCount = 0;
+    this.props.ratings.forEach((element) => {
+      if (element === 'Buy') {
+        buyCount++
+      };
+    });
+    let raterCount = this.props.ratings.length;
+    if (!this.state.trigger) {
+      this.setState({ 
+        buyPerc : Math.round((buyCount / raterCount) * 100),
+        totalRaters : raterCount,
+        trigger : true
+      });
+    }
   }
 
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
       <section id="summaryComponent">
-        <header className="head">
+        <header className="tagHead">
           Analyst Ratings
         </header>
-        <Tag 
+        <Tag
+          percent={this.state.buyPerc}
+          total={this.state.totalRaters}
         />
-        <PercentBars 
+        <PercentBars
         />
-        <SummaryBoxes 
+        <SummaryBoxes
         />
       </section>
     )
