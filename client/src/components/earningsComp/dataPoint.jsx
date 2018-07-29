@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 class DataPoint extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
   }
   
   render () {
