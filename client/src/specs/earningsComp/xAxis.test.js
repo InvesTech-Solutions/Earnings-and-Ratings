@@ -17,6 +17,6 @@ describe('component: Earnings.description', () => {
   });
 
   it('should render xlabel', () => {
-    expect(wrapper.find('.xlabel').length).toEqual(1)
+    expect(wrapper.find('.xlabel').length).toEqual(1);
   });
 });

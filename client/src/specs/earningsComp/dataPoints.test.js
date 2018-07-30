@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import DataPoints from './dataPoints.js';
 
-describe('component: Earnings.description', () => {
+describe('component: Earnings.description branch1', () => {
  let wrapper;
  const defaultProps = {
     estimate: ['4Q2016', '$0.40', '1Q2017', '$0.45', '2Q2017', '$0.60'],
