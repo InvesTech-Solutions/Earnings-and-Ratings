@@ -3,8 +3,15 @@
 exports[`component: App should render initial layout 1`] = `
 Array [
   <div>
+    <Summary
+      buySummary=""
+      ratings={Array []}
+      sellSummary=""
+    />
+    <br />
     <Earnings
       actualEarnings={Array []}
+      className="earningsBlock"
       estimatedEarnings={Array []}
     />
   </div>,

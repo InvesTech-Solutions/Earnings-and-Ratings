@@ -52,6 +52,18 @@
   },
   "homepage": "https://github.com/InvesTech-Solutions/Ratings-and-Earnings#readme",
   "jest": {
+    "collectCoverage" : true,
+    "coverageDirectory" : "coverage",
+    "verbose" : true,
+
+    "coverageThreshold" : {
+      "global": {
+        "branches" : 50,
+        "functions" : 60,
+        "lines" : 60,
+        "statements" : 60
+      }
+    },
     "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
     "unmockedModulePathPatterns": [
       "react",

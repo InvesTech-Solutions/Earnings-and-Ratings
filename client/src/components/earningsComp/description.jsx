@@ -11,7 +11,7 @@ class Description extends Component {
         <div className="descEst">
           <svg width="28" height="28">
             <g transform="translate(14, 20)">
-              <circle r="7" fill="#116A4C" className="descCircle" />
+              <circle r="7" fill="#d7f7e7" className="descCircle" />
             </g>
           </svg>
           <div className="descText">

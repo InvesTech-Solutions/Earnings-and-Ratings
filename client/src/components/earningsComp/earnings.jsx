@@ -80,8 +80,6 @@ class Earnings extends Component {
       </section>
     ) 
   }
-
-  
 }
 
 export default Earnings;

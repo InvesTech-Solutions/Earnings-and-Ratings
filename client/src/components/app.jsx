@@ -59,9 +59,13 @@ class App extends React.Component {
     return (
       <div>
         <Summary 
-
+          ratings={this.state.ratings}
+          buySummary={this.state.buySummary}
+          sellSummary={this.state.sellSummary}
         />
+        <br />
         <Earnings 
+          className="earningsBlock"
           estimatedEarnings={this.state.companyEstimatedEarnings}
           actualEarnings={this.state.companyActualEarnings}
         />
