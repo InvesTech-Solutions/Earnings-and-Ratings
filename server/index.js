@@ -62,8 +62,8 @@ app.get('/createExample', (req, res) => {
             quartersAct.push(val);
           });
           param.push(JSON.stringify(quartersAct));
-          param.push(faker.lorem.paragraph());
-          param.push(faker.lorem.paragraph());
+          param.push(faker.lorem.paragraphs(3));
+          param.push(faker.lorem.paragraphs(3));
           // console.log(param);
           let query = 'INSERT INTO company (name, estimated, actual, best_summary, sell_summary) VALUES (?, ?, ?, ?, ?)';
           db.query(query, param, callbackQuery);

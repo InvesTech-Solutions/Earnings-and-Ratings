@@ -33,7 +33,7 @@ class App extends React.Component {
           contentType: 'application/json',
           success: (data) => {
             that.setState({ 
-              exampleDataLoaded : true, 
+              exampleDataLoaded : true,
               companyId: JSON.parse(data.id),
               companyName: data.name,
               companyEstimatedEarnings: JSON.parse(data.esimated),
@@ -65,7 +65,6 @@ class App extends React.Component {
         />
         <br />
         <Earnings 
-          className="earningsBlock"
           estimatedEarnings={this.state.companyEstimatedEarnings}
           actualEarnings={this.state.companyActualEarnings}
         />

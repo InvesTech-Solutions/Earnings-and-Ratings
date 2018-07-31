@@ -46,8 +46,7 @@ class Summary extends Component {
             ratings={this.props.ratings}
           />
           <SummaryBoxes
-            buy={this.props.buySummary}
-            sell={this.props.sellSummary}
+            summaries={[this.props.buySummary, this.props.sellSummary]}
           />
         </div>
       </section>

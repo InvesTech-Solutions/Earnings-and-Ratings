@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
+import SummaryBox from './summaryBox';
 
 class SummaryBoxes extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
   }
 
   componentDidUpdate () {
-
   }
 
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
-      <div>
-      summaryboxes
+      <div className='summaryBoxes'>
+        {this.props.summaries.map((summary, index) => {
+          return(  
+            <SummaryBox
+              summary={summary}
+              ind={index}
+            />
+          )
+        })}
       </div>
     )
   }
