@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import DataPoint from './dataPoint'
+import DataPoint from './dataPoint';
+import styles from './../../../dist/build/styles.min.css';
 
 class DataPoints extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class DataPoints extends Component {
 
   render () {
     return (
-      <svg className="xs" width="560" height="120">
+      <svg className={styles.xs} width="560" height="120">
         {this.state.estimate.map((data, index) => {
           return (
             <DataPoint

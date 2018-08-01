@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Tag from './tag';
 import PercentBars from './percentBars';
 import SummaryBoxes from './summaryBoxes';
+import styles from './../../../dist/build/styles.min.css';
 
 class Summary extends Component {
   constructor(props) {

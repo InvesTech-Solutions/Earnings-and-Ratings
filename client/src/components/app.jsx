@@ -1,7 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import Earnings from './earningsComp/earnings';
-import Summary from './summaryComp/summary'
+import Summary from './summaryComp/summary';
+import styles from './../../dist/build/styles.min.css';
 
 class App extends React.Component {
   constructor(props) {

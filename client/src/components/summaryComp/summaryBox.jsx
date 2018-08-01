@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import $ from 'jquery'
+import $ from 'jquery';
+import styles from './../../../dist/build/styles.min.css';
 
 class SummaryBox extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class SummaryBox extends Component {
   render () {
     return (
       <div id={`summaryPositionControl_${this.props.ind}`}>
-        <div className='summaryTail' id={`summaryTail_${this.props.ind}`}>
+        <div className={styles.summaryTail} id={`summaryTail_${this.props.ind}`}>
           <svg width="24" height="20" viewBox="0 0 24 20">
             <g>
               <path  d="M6.66133815e-15,6.89249489e-14 L24,1.30957403e-12 L3.34939321,18.8768262 L3.34939321,18.8768262 C2.5341158,19.6220755 1.26905894,19.5653065 0.523809649,18.750029 C0.186851616,18.3814084 2.34087955e-13,17.9000574 2.26929586e-13,17.4006358 L6.66133815e-15,6.89249489e-14 Z"></path>
@@ -84,14 +85,14 @@ class SummaryBox extends Component {
           </svg>
         </div>
         <div id={`summaryBox_${this.props.ind}`}>
-          <p className='summaryHead'>{this.state.head}</p>
-          <div className="fade" id={`fade_${this.props.ind}`}>
+          <p className={styles.summaryHead}>{this.state.head}</p>
+          <div className={styles.fade} id={`fade_${this.props.ind}`}>
             {this.props.summary}
           </div>
-          <a className='readMore' href='#' onClick={this.clickHandler}>
+          <a className={styles.readMore} href='#' onClick={this.clickHandler}>
             Read More
           </a>
-          <footer className="summaryFooter">
+          <footer className={styles.summaryFooter}>
             <p>Morningstar</p>
           </footer>
         </div>

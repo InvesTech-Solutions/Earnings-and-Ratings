@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import XAxis from './xAxis';
 import YAxis from './yAxis';
-import DataPoints from './dataPoints'
-import Description from './description'
+import DataPoints from './dataPoints';
+import Description from './description';
+import styles from './../../../dist/build/styles.min.css';
 
 class Earnings extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Earnings extends Component {
 
   componentDidUpdate () {
     // process data to create arrays used for y-axis (min to max, length of 4) and x-axis (quarterlies)
+    console.log(styles)
     let filtered = this.props.estimatedEarnings.concat(this.props.actualEarnings).filter((element) => {
       return element[0] === '$';
     });
@@ -50,14 +52,14 @@ class Earnings extends Component {
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
-      <section id="earningsComponent">
-        <header className="head">
+      <section id={styles.earningsComponent}>
+        <header className={styles.head}>
         Earnings
         </header>
-        <div className="chartDiv">
-          <div className="chartContainer">
-            <div className="innerChartContainer">
-              <div className="axes">
+        <div className={styles.chartDiv}>
+          <div className={styles.chartContainer}>
+            <div className={styles.innerChartContainer}>
+              <div className={styles.axes}>
                 <YAxis 
                   yRange={this.state.yRange}
                 />

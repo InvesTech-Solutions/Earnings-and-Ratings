@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './../../../dist/build/styles.min.css';
 
 class Description extends Component {
   constructor(props) {
@@ -7,30 +8,30 @@ class Description extends Component {
 
   render () {
     return (
-      <div className="descDiv">
-        <div className="descEst">
+      <div className={styles.descDiv}>
+        <div className={styles.descEst}>
           <svg width="28" height="28">
             <g transform="translate(14, 20)">
-              <circle r="7" fill="#d7f7e7" className="descCircle" />
+              <circle r="7" fill="#d7f7e7" className={styles.descCircle} />
             </g>
           </svg>
-          <div className="descText">
+          <div className={styles.descText}>
           Estimated
           </div>
-          <div className="botText">
+          <div className={styles.botText}>
             {this.props.estimate[this.props.estimate.length - 1]}
           </div>
         </div>
-        <div className="descAct">
+        <div className={styles.descAct}>
           <svg width="28" height="28">
             <g transform="translate(14, 20)">
-              <circle r="7" fill="#2BD89E" className="descCircle" />
+              <circle r="7" fill="#2BD89E" className={styles.descCircle} />
             </g>
           </svg>
-          <div className="descText">
+          <div className={styles.descText}>
           Actual
           </div>
-          <div className="botText">
+          <div className={styles.botText}>
             {this.props.actual[this.props.estimate.length - 1]}
           </div>
 
