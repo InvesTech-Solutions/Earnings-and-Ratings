@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Tag from './tag';
 import PercentBars from './percentBars';
 import SummaryBoxes from './summaryBoxes';
+import styles from './../../../dist/build/styles.min.css';
 
 class Summary extends Component {
   constructor(props) {
@@ -46,8 +47,7 @@ class Summary extends Component {
             ratings={this.props.ratings}
           />
           <SummaryBoxes
-            buy={this.props.buySummary}
-            sell={this.props.sellSummary}
+            summaries={[this.props.buySummary, this.props.sellSummary]}
           />
         </div>
       </section>

@@ -1,7 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import Earnings from './earningsComp/earnings';
-import Summary from './summaryComp/summary'
+import Summary from './summaryComp/summary';
+import styles from './../../dist/build/styles.min.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class App extends React.Component {
           contentType: 'application/json',
           success: (data) => {
             that.setState({ 
-              exampleDataLoaded : true, 
+              exampleDataLoaded : true,
               companyId: JSON.parse(data.id),
               companyName: data.name,
               companyEstimatedEarnings: JSON.parse(data.esimated),
@@ -65,7 +66,6 @@ class App extends React.Component {
         />
         <br />
         <Earnings 
-          className="earningsBlock"
           estimatedEarnings={this.state.companyEstimatedEarnings}
           actualEarnings={this.state.companyActualEarnings}
         />

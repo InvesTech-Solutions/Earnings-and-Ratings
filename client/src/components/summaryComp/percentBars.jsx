@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PercentBar from './percentBar';
+import styles from './../../../dist/build/styles.min.css';
 
 class PercentBars extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class PercentBars extends Component {
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
-      <div className='bars'>
+      <div className={styles.bars}>
         {this.state.suggestions.map((suggestion, index) => {
           return (
             <PercentBar

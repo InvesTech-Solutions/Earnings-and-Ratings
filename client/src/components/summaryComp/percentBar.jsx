@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './../../../dist/build/styles.min.css';
 
 class PercentBar extends Component {
   constructor(props) {
@@ -21,16 +22,16 @@ class PercentBar extends Component {
   // renders entire earnings section with YAxis, DataPoints, XAxis, and Descriptions as subcomponents
   render () {
     return (
-      <div className='barRow'>
-        <div className='barSuggestion'>
+      <div className={styles.barRow}>
+        <div className={styles.barSuggestion}>
           {this.props.suggestion}
         </div>
-        <div className='barContain'>
-          <div className='percInBarContain' style={{left: this.state.percent}}>
+        <div className={styles.barContain}>
+          <div className={styles.percInBarContain} style={{left: this.state.percent}}>
             <span className='percInBar'>{this.state.rounded}</span>
           </div>
-          <div className='wholeBar'>
-            <div className='coloredBar' style={{width: this.state.percent}}></div>
+          <div className={styles.wholeBar}>
+            <div className={styles.coloredBar} style={{width: this.state.percent}}></div>
           </div>
         </div>
       </div>

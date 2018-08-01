@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -6,9 +6,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
+
+var _stylesMin = require('./../../../dist/build/styles.min.css');
+
+var _stylesMin2 = _interopRequireDefault(_stylesMin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28,14 +32,14 @@ var YAxisTick = function (_Component) {
   }
 
   _createClass(YAxisTick, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "span",
-        { className: "y-" + this.props.ind },
+        'span',
+        { className: "jby-" + this.props.ind },
         _react2.default.createElement(
-          "div",
-          { className: "y" + this.props.ind },
+          'div',
+          { className: "jby" + this.props.ind },
           this.props.yValue
         )
       );
@@ -46,4 +50,4 @@ var YAxisTick = function (_Component) {
 }(_react.Component);
 
 exports.default = YAxisTick;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL2NvbXBvbmVudHMvZWFybmluZ3NDb21wL3lBeGlzVGljay5qc3giXSwibmFtZXMiOlsiWUF4aXNUaWNrIiwicHJvcHMiLCJpbmQiLCJ5VmFsdWUiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7Ozs7Ozs7Ozs7OztJQUVNQSxTOzs7QUFDSixxQkFBWUMsS0FBWixFQUFtQjtBQUFBOztBQUFBLGlIQUNYQSxLQURXO0FBRWxCOzs7OzZCQUVTO0FBQ1IsYUFDRTtBQUFBO0FBQUEsVUFBTSxXQUFXLE9BQU8sS0FBS0EsS0FBTCxDQUFXQyxHQUFuQztBQUNFO0FBQUE7QUFBQSxZQUFLLFdBQVcsTUFBTSxLQUFLRCxLQUFMLENBQVdDLEdBQWpDO0FBQXVDLGVBQUtELEtBQUwsQ0FBV0U7QUFBbEQ7QUFERixPQURGO0FBS0Q7Ozs7RUFYcUJDLGdCOztrQkFjVEosUyIsImZpbGUiOiJ5QXhpc1RpY2suanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgQ29tcG9uZW50IH0gZnJvbSAncmVhY3QnO1xuXG5jbGFzcyBZQXhpc1RpY2sgZXh0ZW5kcyBDb21wb25lbnQge1xuICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKTtcbiAgfVxuXG4gIHJlbmRlciAoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxzcGFuIGNsYXNzTmFtZT17XCJ5LVwiICsgdGhpcy5wcm9wcy5pbmR9PlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT17XCJ5XCIgKyB0aGlzLnByb3BzLmluZH0+e3RoaXMucHJvcHMueVZhbHVlfTwvZGl2PlxuICAgICAgPC9zcGFuPlxuICAgICk7XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgWUF4aXNUaWNrOyJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL2NvbXBvbmVudHMvZWFybmluZ3NDb21wL3lBeGlzVGljay5qc3giXSwibmFtZXMiOlsiWUF4aXNUaWNrIiwicHJvcHMiLCJpbmQiLCJ5VmFsdWUiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBRU1BLFM7OztBQUNKLHFCQUFZQyxLQUFaLEVBQW1CO0FBQUE7O0FBQUEsaUhBQ1hBLEtBRFc7QUFFbEI7Ozs7NkJBRVM7QUFDUixhQUNFO0FBQUE7QUFBQSxVQUFNLFdBQVcsU0FBUyxLQUFLQSxLQUFMLENBQVdDLEdBQXJDO0FBQ0U7QUFBQTtBQUFBLFlBQUssV0FBVyxRQUFRLEtBQUtELEtBQUwsQ0FBV0MsR0FBbkM7QUFBeUMsZUFBS0QsS0FBTCxDQUFXRTtBQUFwRDtBQURGLE9BREY7QUFLRDs7OztFQVhxQkMsZ0I7O2tCQWNUSixTIiwiZmlsZSI6InlBeGlzVGljay5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBDb21wb25lbnQgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgc3R5bGVzIGZyb20gJy4vLi4vLi4vLi4vZGlzdC9idWlsZC9zdHlsZXMubWluLmNzcyc7XG5cbmNsYXNzIFlBeGlzVGljayBleHRlbmRzIENvbXBvbmVudCB7XG4gIGNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpO1xuICB9XG5cbiAgcmVuZGVyICgpIHtcbiAgICByZXR1cm4gKFxuICAgICAgPHNwYW4gY2xhc3NOYW1lPXtcImpieS1cIiArIHRoaXMucHJvcHMuaW5kfT5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9e1wiamJ5XCIgKyB0aGlzLnByb3BzLmluZH0+e3RoaXMucHJvcHMueVZhbHVlfTwvZGl2PlxuICAgICAgPC9zcGFuPlxuICAgICk7XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgWUF4aXNUaWNrOyJdfQ==

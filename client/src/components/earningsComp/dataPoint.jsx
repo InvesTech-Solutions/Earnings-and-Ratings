@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './../../../dist/build/styles.min.css';
 
 class DataPoint extends Component {
   constructor(props) {

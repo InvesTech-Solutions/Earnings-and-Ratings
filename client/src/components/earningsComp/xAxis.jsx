@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import XAxisTick from './xAxisTick';
+import styles from './../../../dist/build/styles.min.css';
 
 class XAxis extends Component {
   constructor(props) {

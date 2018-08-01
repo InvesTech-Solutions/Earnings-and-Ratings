@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './../../../dist/build/styles.min.css';
 
 class XAxisTick extends Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class XAxisTick extends Component {
   
   render () {
     return (
-      <span className={"x-" + this.props.ind}>
-        <div className={"x" + this.props.ind}>
+      <span className={"jbx-" + this.props.ind}>
+        <div className={"jbx" + this.props.ind}>
           {this.props.xValue}
         </div>
       </span>

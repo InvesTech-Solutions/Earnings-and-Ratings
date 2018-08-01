@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import YAxisTick from './yAxisTick';
+import styles from './../../../dist/build/styles.min.css';
 
 class YAxis extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class YAxis extends Component {
 
   render () {
     return (
-      <div className="ylabel">
+      <div className={styles.ylabel}>
         {this.props.yRange.map((yTick, index)=>{
           return (
             <YAxisTick 
